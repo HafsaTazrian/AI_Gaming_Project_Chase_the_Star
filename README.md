@@ -1,8 +1,8 @@
-# Chase AI
+# Chase the Star
 
 [![Python](docs/badges/Python.svg)](https://www.python.org)
 ![ECMAScript](docs/badges/ECMAScript.svg)
-![License](docs/badges/License-MIT.svg)
+
 
 ## Introduction
 
@@ -22,13 +22,6 @@ An artificial intelligence game to demonstrate the ***A\* path-finding***. The e
   pip install -r requirements.txt
   ```
 
-### Running
-
-```bash
-python main.py
-```# 🎮 Chase AI - Enhanced Edition
-
-An intelligent pathfinding chase game where an AI-controlled enemy pursues an escaping agent through procedurally generated maps.
 
 ## 🌟 Features
 
@@ -75,43 +68,6 @@ An intelligent pathfinding chase game where an AI-controlled enemy pursues an es
 - **Pros**: Much faster than A* on grid maps
 - **Cons**: Complex implementation, needs uniform costs
 - **Use when**: You have large, open areas
-
-## 📁 File Structure
-
-```
-Chase-AI-main/
-├── src/
-│   ├── game/
-│   │   ├── __init__.py
-│   │   ├── config.py
-│   │   ├── map.py
-│   │   ├── role.py
-│   │   ├── action.py
-│   │   ├── strategy.py      
-│   │   └── grid.py
-│   ├── res/
-│   │   ├── star.png
-│   │   ├── grass.png
-│   │   ├── bush.png
-│   │   ├── boy.png
-│   │   ├── cat-girl.png
-│   │   ├── horn-girl.png
-│   │   ├── pink-girl.png
-│   │   ├── princess.png
-│   │   ├── plain.png
-│   │   ├── plain-path.png
-│   │   ├── grass-path.png
-│   │   ├── stone-wall.png
-│   │   └── wooden-wall.png
-│   ├── main.py              
-│   ├── displayer.py
-│   ├── config.json          
-│   ├── quick_test.py        
-│   ├── comparison_test.py   
-│   └── game_analyzer.py     
-└── README.md
-
-```
 
 ## 🚀 Installation
 
@@ -199,22 +155,22 @@ Edit `config.json` to customize gameplay:
 ### When to Use Each
 
 **Use A*** when:
-- You need optimal paths with good performance
+- Need optimal paths with good performance
 - Terrain costs matter
 - General-purpose pathfinding
 
 **Use Dijkstra** when:
 - Terrain costs vary dramatically (bushes/grass)
-- You need guaranteed lowest cost
+- Need guaranteed lowest cost
 - Map has no clear direction to target
 
 **Use BFS** when:
 - Simple grid with uniform costs
 - Speed is critical
-- You want minimum steps (not minimum cost)
+- Want minimum steps (not minimum cost)
 
 **Use Greedy** when:
-- You want aggressive, reactive AI
+- Want aggressive, reactive AI
 - Performance is top priority
 - Suboptimal paths are acceptable
 
@@ -234,46 +190,6 @@ Edit `config.json` to customize gameplay:
    - Enemy catches agent (after A & B) → Enemy wins
    - Agent gets stuck → Enemy wins
 
-## 💡 Making It More Interesting
-
-### Implement These Ideas
-
-1. **Dynamic Obstacles**
-   ```python
-   # In map.py, add moving walls
-   def update_terrain(self, step: int):
-       if step % 20 == 0:
-           # Move random wall
-   ```
-
-2. **Power-Ups**
-   ```python
-   # Add speed boost collectibles
-   class PowerUp:
-       SPEED = 1
-       INVISIBILITY = 2
-   ```
-
-3. **Multiple Enemies**
-   ```python
-   # In main.py
-   enemies = [Enemy(...) for _ in range(3)]
-   ```
-
-4. **Line of Sight**
-   ```python
-   # In role.py
-   def can_see(self, target) -> bool:
-       # Implement raycast
-   ```
-
-5. **Sound Detection**
-   ```python
-   # Enemy hears agent within radius
-   def detect_sound(self, radius: int):
-       dist = manhattan(self.pos, agent.pos)
-       return dist <= radius
-   ```
 
 ## 🔬 Algorithm Deep Dive
 
@@ -312,7 +228,7 @@ if moving diagonally:
 
 ```
 ==================================================
-🎮 CHASE AI - ENHANCED EDITION
+🎮 CHASE THE STAR
 ==================================================
 Enemy Algorithm: ASTAR
 Map Size: 14x10
@@ -339,30 +255,7 @@ Good Steps: 390
 **Game too slow**: Use `greedy` or `bfs` instead of `aStar`
 **Paths ignore bushes**: Check `moveCost` in config
 
-## 📝 License
 
-MIT License - Feel free to modify and extend!
-
-## 🤝 Contributing
-
-Ideas for improvements:
-- Neural network-based pathfinding
-- Genetic algorithm for strategy evolution
-- Procedural maze generation (Prim's, Kruskal's)
-- Minimax for adversarial planning
-- Monte Carlo Tree Search for agent decisions
-
----
-
-**Happy Pathfinding! 🚀**
-
-### Configurations
-
-The game configuration is in the `src/config.json` file.
-
-## Documents
-
-See `docs/wiki.md` for the details.
 
 ### Class Diagram
 
@@ -472,13 +365,6 @@ Agent --> WallDensity
 
 - [*pygame*](https://www.pygame.org)
 
-## License
-
-Distributed under the *MIT License*. See `LICENSE` for more information.
-
-The image resources are from the book "*Making Games with Python & Pygame*" written by *Al Sweigart*.
-
-
 
 
 ## Running the Game
@@ -491,7 +377,7 @@ python src/quick_test.py
 ```
 
 This will:
-1. Let you select an algorithm (1-5)
+1. Let us select an algorithm (1-5)
 2. Automatically update config.json
 3. Run the game
 
@@ -541,4 +427,7 @@ python src/game_analyzer.py bfs --save
 python src/comparison_test.py --single dijkstra --games 5
 ```
 
+---
+
+**Happy Pathfinding! 🚀**
 
