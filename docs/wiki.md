@@ -377,9 +377,3 @@ The game runs 100 times in each trial and the agent's scores are shown below:
 ## Dependencies
 
 - [*pygame*](https://www.pygame.org)
-
-## License
-
-Distributed under the *MIT License*. See `LICENSE` for more information.
-
-The image resources are from the book "*Making Games with Python & Pygame*" written by *Al Sweigart*.
